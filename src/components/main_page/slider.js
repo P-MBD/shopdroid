@@ -1,7 +1,8 @@
 import React from 'react'
-import {View,TouchableWithoutFeedback,Image,StyleSheet} from 'react-native'
+import {View,TouchableWithoutFeedback,Image,StyleSheet,Dimensions} from 'react-native'
 import Swiper from 'react-native-swiper'
 import { swiper_list } from '../../data/dataArray'
+const w=Dimensions.get('window').width;
 
 const Slider=()=>{
 
@@ -29,7 +30,7 @@ const Slider=()=>{
 
 const styles= StyleSheet.create({
     container:{
-        height:200
+        height:w/2.2
     },
     btn:{
         flex:1

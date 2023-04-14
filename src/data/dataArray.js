@@ -43,3 +43,14 @@ export const cat_item = [
     {name:'LG v30',price:'13000',img:'https://emalls.ir/files/products/automatic/1126350/b4vjtpqc_thumb3.jpg'},
     {name:'Nokia 9',price:'790000',img:'https://aradmobile.com/mag/wp-content/uploads/2019/02/Nokia-9-Pureview-Official-Renders-Hero-Aradmag.jpg'},
 ]
+
+export const off_data = [ 
+    {l_price:'140000',n_price:'12000',img:'https://dkstatics-public.digikala.com/digikala-products/111933797.jpg?x-oss-process=image/resize,m_lfit,h_500,w_500/quality,q_80'},
+    {l_price:'456556',n_price:'1000',img:'https://dkstatics-public.digikala.com/digikala-products/112564192.jpg?x-oss-process=image/resize,m_lfit,h_500,w_500/quality,q_80'},
+    {l_price:'2344000',n_price:'1000',img:'https://dkstatics-public.digikala.com/digikala-products/112947996.jpg?x-oss-process=image/resize,m_lfit,h_500,w_500/quality,q_80'},
+    {l_price:'345000',n_price:'2778888',img:'https://dkstatics-public.digikala.com/digikala-products/112565091.jpg?x-oss-process=image/resize,m_lfit,h_500,w_500/quality,q_80'},
+]
+
+export const kala_share = [
+    {p_name:'کفش با برند فلان',e_name:'shose - - - - ',}
+]

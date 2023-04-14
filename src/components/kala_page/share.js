@@ -1,16 +1,34 @@
-import React from 'react'
-import{Text,StyleSheet,View,Dimensions} from 'react-native'
+import React,{useState} from 'react'
+import{Text,StyleSheet,View,Dimensions,Share} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { kala_share } from '../../data/dataArray';
+import Ripple from 'react-native-material-ripple'
 const w= Dimensions.get('window').width;
-const Share=()=>{
+const Sharee=()=>{
+    const [shareValue,setShareValue]=useState('');
+    const ShareKala = () =>{
+        Share.share({
+            message:shareValue.toString()
+        })
+    }
     return(
 
         <View style={styles.container}>
            <View style={styles.box1}>
-                <Icon name="share-alt" size={18} color="#999"/>
-                <Icon name="bell" size={18} color='#999' style={{marginLeft:34,marginRight:34}} />
-                <Icon name="heart" size={18} color='#999'/>
+                <Ripple style={styles.btn} onPress={()=>ShareKala()}>
+                     <Icon name="share-alt" size={18} color="#999"/>
+                </Ripple>
+
+                <Ripple style={styles.btn}>
+                    <Icon name="bell" size={18} color='#999' style={{marginLeft:34,marginRight:34}} />
+                </Ripple>
+
+                <Ripple style={styles.btn}>
+                     <Icon name="heart" size={18} color='#999'/>  
+                </Ripple>
+                
+                
+                
            </View>
            <View style={styles.box2}>
             {
@@ -60,9 +78,15 @@ const styles= StyleSheet.create({
         textAlign:'right',
      
     },
+    btn:{
+        paddingLeft:8,
+        paddingTop:6,
+        paddingRight:8,
+        paddingBottom:6
+    },
 
 })
 
-export default React.memo(Share)
+export default React.memo(Sharee)
 
 

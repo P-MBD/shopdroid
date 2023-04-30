@@ -6,13 +6,13 @@ import Category from './src/screens/category';
 import Off from './src/screens/off';
 import Kala from './src/screens/kala';
 import Shop_cart from './src/screens/shop_cart'
-
+import Login from './src/screens/Login'
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Shop_cart'>
+      <Stack.Navigator initialRouteName='Login'>
         <Stack.Screen
           name="Main"
           component={Main}
@@ -39,6 +39,12 @@ const MyStack = () => {
           name="Shop_cart"
           component={Shop_cart}     
         />
+
+         <Stack.Screen
+          name="Login"
+          component={Login}     
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

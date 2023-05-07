@@ -7,12 +7,15 @@ import Off from './src/screens/off';
 import Kala from './src/screens/kala';
 import Shop_cart from './src/screens/shop_cart'
 import Login from './src/screens/Login'
+import SignOn from './src/screens/signOn';
+import Forget_Pass from './src/screens/forget_pass';
+import Search from './src/screens/search';
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login'>
+      <Stack.Navigator initialRouteName='Off'>
         <Stack.Screen
           name="Main"
           component={Main}
@@ -43,6 +46,19 @@ const MyStack = () => {
          <Stack.Screen
           name="Login"
           component={Login}     
+        />
+
+        <Stack.Screen
+          name="SignOn"
+          component={SignOn}     
+        />
+        <Stack.Screen
+          name="Forget_Pass"
+          component={Forget_Pass}     
+        />
+        <Stack.Screen
+          name="Search"
+          component={Search}     
         />
 
       </Stack.Navigator>

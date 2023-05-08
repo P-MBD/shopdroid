@@ -28,12 +28,12 @@ export const off_list = [
     {img:'https://files.rtl-theme.com/products/covers/2018/03/43779_14533a191e1a248d3b80e7d82.jpg'}
 ]
 
-export const kala=[
-    {name:'reactapp',price: '21232',img:'https://reactapp.ir/wp-content/uploads/shop-kala-1-300x185.png'},
-    {name:'reactapp',price: '54654654',img:'https://reactapp.ir/wp-content/uploads/shop-kala-2-100x100.png'},
-    {name:'reactapp',price: '3452324',img:'https://reactapp.ir/wp-content/uploads/shop-kala-3-100x100.png'},
-    {name:'reactapp',price: '10000',img:'https://reactapp.ir/wp-content/uploads/shop-kala-4-100x100.jpg'},
-    {name:'reactapp',price: '233333',img:'https://reactapp.ir/wp-content/uploads/shop-kala-5-100x100.jpg'},
+export const kala = [
+    {ename:'reactapp',pname:'کفش',price: '21232',tprice:'10000',img:'https://reactapp.ir/wp-content/uploads/shop-kala-1-300x185.png'},
+    {ename:'reactapp',pname:'پیراهن مردانه',price: '54654654',tprice:'10000',img:'https://reactapp.ir/wp-content/uploads/shop-kala-2-100x100.png'},
+    {ename:'reactapp',pname:'مایتابه',price: '3452324',tprice:'10000',img:'https://reactapp.ir/wp-content/uploads/shop-kala-3-100x100.png'},
+    {ename:'reactapp',pname:'کیف مسافرتی',price: '10000',tprice:'10000',img:'https://reactapp.ir/wp-content/uploads/shop-kala-4-100x100.jpg'},
+    {ename:'reactapp',pname:'ساعت دیواری',price: '233333',tprice:'10000',img:'https://reactapp.ir/wp-content/uploads/shop-kala-5-100x100.jpg'},
 ]
 
 export const cat_item = [

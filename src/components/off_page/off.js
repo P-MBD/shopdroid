@@ -6,6 +6,7 @@ import off from '../main_page/off';
 import MIcon from 'react-native-vector-icons/MaterialIcons'
 import FIcon from 'react-native-vector-icons/Feather'
 import SIcon from 'react-native-vector-icons/SimpleLineIcons'
+import { kala } from '../../data/dataArray';
 
 const w= Dimensions.get('window').width;
 
@@ -22,6 +23,7 @@ const Offs= () => {
                 setChange_box_state(3);
                 setChange_box_icon(<SIcon name="control-pause" style={[styles.head_icon,{rotation:90}]} />)
                 break;
+                
             case 3:
                 setChange_box_state(1);
                 setChange_box_icon(<FIcon name="grid" style={styles.head_icon} />)
@@ -53,29 +55,29 @@ const Offs= () => {
         )
     }
 
-    const Full= () =>{
+    const Full= (props) =>{
         return(
             <View style={full_s.box}>
                 <View styles={full_s.sec1}>
-                    <View style={full_s.image}>
-                      <Image source={require('../../assets/img/full_star.png')} style={full_s.image_box}/>
+                    <View style={full_s.image_box}>
+                      <Image source={{uri:props.data.img}} style={full_s.image}/>
                     </View>
                 
                     <Text style={full_s.pName}>
-                        ستاره
+                        {props.data.pname}
                     </Text>
                     <Text style={full_s.eName}>
-                        star
+                        {props.data.ename}
                     </Text>
                 </View>
              
                 <View style={full_s.sec2}>
                     <View >
                         <Text style={full_s.red_p}>
-                        1920000 تومان
+                        {props.data.price} تومان
                         </Text>
                         <Text style={full_s.green_p}>
-                        1199000 تومان
+                        {props.data.tprice} تومان
                         </Text>
                     </View>
                     <View>
@@ -88,26 +90,26 @@ const Offs= () => {
        
     }
 
-    const Half =()=>{
+    const Half =(props)=>{
         return(
             <View style={half_s.box} >
                 <View style={half_s.left}>
                     <View style={half_s.box_name}>
                           <Text style={full_s.pName}>
-                        ستاره
+                        {props.data.pname}
                          </Text>
                         <Text style={full_s.eName}>
-                        star
+                        {props.data.ename}
                         </Text>
                     </View>
                     
                     <View style={half_s.box_price}>
                         <View>
                              <Text style={full_s.red_p}>
-                                1920000 تومان
+                             {props.data.price} تومان
                             </Text>
                             <Text style={full_s.green_p}>
-                                1199000 تومان
+                            {props.data.tprice} تومان
                             </Text>
                         </View>
                          <View>
@@ -116,32 +118,32 @@ const Offs= () => {
                     </View>
                 </View>
                 <View style={half_s.right}>
-                <Image source={require('../../assets/img/full_star.png')} style={half_s.image}/>
+                <Image source={{uri:props.data.img}}  style={half_s.image}/>
                 </View>
             </View>
         )
     }
 
-    const Two= () =>{
+    const Two= (props) =>{
         return(
             <View style={two_s.box}>
                 <View styles={two_s.sec1}>
-                    <View style={two_s.image}>
-                      <Image source={require('../../assets/img/full_star.png')} style={two_s.image_box}/>
+                    <View style={two_s.image_box}>
+                      <Image source={{uri:props.data.img}} style={two_s.image}/>
                     </View>
                 
                     <Text style={two_s.pName}>
-                        ستاره
+                        {props.data.pname}
                     </Text>
                 </View>
              
                 <View style={two_s.sec2}>
                     <View  style={two_s.box_price}>
                         <Text style={two_s.red_p}>
-                        1920000 تومان
+                        {props.data.price}تومان
                         </Text>
                         <Text style={full_s.green_p}>
-                        1199000 تومان
+                        {props.data.tprice} تومان
                         </Text>
                     </View>
                     <View>
@@ -158,18 +160,19 @@ const Offs= () => {
         
             <View style={styles.container}>
                 <A_header />
-                <View style={{margin:8, flexDirection:'row',flexWrap:'wrap',justifyContent:'space-between'}}>
-                    {
+                <View style={{margin:8,flexDirection:'row',flexWrap:'wrap',justifyContent:'space-between'}}>
+                {
+                    kala.map((item,key)=>(
                         change_box_state===1?
-                            <Full />
+                            <Full data={item}/>
+                        :
+                            change_box_state===2?
+                                <Two data={item}/>
                             :
-                                 change_box_state===2?
-                                    <Two />
-                                    :
-                                      <Half />
-                    }
-                    
-                </View>
+                                <Half data={item}/>
+                    ))
+                }
+            </View>
              
           </View>
   

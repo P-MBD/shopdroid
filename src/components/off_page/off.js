@@ -6,6 +6,7 @@ import off from '../main_page/off';
 import MIcon from 'react-native-vector-icons/MaterialIcons'
 import FIcon from 'react-native-vector-icons/Feather'
 import SIcon from 'react-native-vector-icons/SimpleLineIcons'
+import MAIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { kala } from '../../data/dataArray';
 
 const w= Dimensions.get('window').width;
@@ -13,6 +14,7 @@ const w= Dimensions.get('window').width;
 const Offs= () => {
     const [change_box_state,setChange_box_state]=useState(1)
     const[change_box_icon, setChange_box_icon]= useState( <FIcon name="grid" style={styles.head_icon} />)
+    const[showModal, setShowModal]= useState(false)
     const _change_box = () =>{
         switch(change_box_state){
             case 1 :
@@ -37,7 +39,7 @@ const Offs= () => {
                         change_box_icon
                     }
                 </Ripple>
-                <View style={[styles.center,styles.A_header_top_right,styles.border_left_right]}>
+                <View style={[styles.center,styles.A_header_top_right,styles.border_left_right]} onPress={()=>setShowModal(true)}>
                     <View>
                         <Text style={styles.a_header_h3_text} >مرتب سازی</Text>
                         <Text style={styles.a_header_h4_text}>پربازدیدترین</Text>
@@ -55,6 +57,41 @@ const Offs= () => {
         )
     }
 
+    const Modall=()=>{
+        return(
+              <Modal visible={showModal} transparent={true}>
+
+                  <View style={modal_s.modal_f} >
+                        <View style={modal_s.modal_ch}>
+                              <Ripple onPress={()=> setShowModal(false)}>
+                                    <Text>exit</Text>
+                             </Ripple>
+                        </View>
+                    </View>
+             </Modal>
+       
+        
+        )
+    }
+  
+    const modal_s = StyleSheet.create({
+        modal_f:{
+            flex:1,
+            backgroundColor:'rgba(0,0,0,0,7)',
+            justifyContent:'center',
+            alignItems:'center',
+        },
+        modal_ch:{
+            width:w/1.2,
+            height:300,
+            backgroundColor:'#fff',
+
+        },
+        modal_btn:{
+            flexDirection:'row',
+            alignItems:'center',
+        }
+    })
     const Full= (props) =>{
         return(
             <View style={full_s.box}>
@@ -159,7 +196,20 @@ const Offs= () => {
     return(
         
             <View style={styles.container}>
+             
                 <A_header />
+
+                
+                <View style={modal_s.modal_ch}>
+                    
+                        <Ripple style={modal_s.modal_btn} onPress={()=> setShowModal(false)}>
+                                    <Text>پربازدیدترین</Text>
+                                    <MAIcon name='circle-outline' size={22} />
+                        </Ripple>
+                    
+                </View>
+                    
+
                 <View style={{margin:8,flexDirection:'row',flexWrap:'wrap',justifyContent:'space-between'}}>
                 {
                     kala.map((item,key)=>(

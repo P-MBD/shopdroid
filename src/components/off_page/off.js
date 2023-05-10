@@ -15,6 +15,7 @@ const Offs= () => {
     const [change_box_state,setChange_box_state]=useState(1)
     const[change_box_icon, setChange_box_icon]= useState( <FIcon name="grid" style={styles.head_icon} />)
     const[showModal, setShowModal]= useState(false)
+    const[selectIcon,setSelectIcon] = useState(1)
     const _change_box = () =>{
         switch(change_box_state){
             case 1 :
@@ -31,7 +32,7 @@ const Offs= () => {
                 setChange_box_icon(<FIcon name="grid" style={styles.head_icon} />)
         }
     }
-    const A_header=()=>{
+    const A_header =()=>{
         return(
             <View style={styles.A_header_top}>
                 <Ripple style={[styles.A_header_top_left]} onPress={()=>_change_box()}>
@@ -39,13 +40,13 @@ const Offs= () => {
                         change_box_icon
                     }
                 </Ripple>
-                <View style={[styles.center,styles.A_header_top_right,styles.border_left_right]} onPress={()=>setShowModal(true)}>
+                <Ripple style={[styles.center,styles.A_header_top_right,styles.border_left_right]} onPress={()=>setShowModal(true)}>
                     <View>
-                        <Text style={styles.a_header_h3_text} >مرتب سازی</Text>
-                        <Text style={styles.a_header_h4_text}>پربازدیدترین</Text>
+                        <Text style={styles.a_header_h3_text}>مرتب سازی</Text>
+                        <Text style={styles.a_header_h4_text}>پربازدید ترین</Text>
                     </View>
-                    <MIcon name="filter-list" style={styles.head_icon}/>
-                </View>
+                    <MIcon name="sort" style={styles.head_icon} />
+                </Ripple>
                 <View style={[styles.center,styles.A_header_top_right]}>
                     <View>
                         <Text style={styles.a_header_h3_text}>فیلتر کردن</Text>
@@ -57,39 +58,104 @@ const Offs= () => {
         )
     }
 
-    const Modall=()=>{
-        return(
-              <Modal visible={showModal} transparent={true}>
 
-                  <View style={modal_s.modal_f} >
-                        <View style={modal_s.modal_ch}>
-                              <Ripple onPress={()=> setShowModal(false)}>
-                                    <Text>exit</Text>
-                             </Ripple>
-                        </View>
+    const _change_modal_icon =(num)=>{
+            setSelectIcon(num);
+            setShowModal(false);
+    }
+    const Modall =()=>{
+        return(
+            <Modal visible={showModal} transparent={true}>
+                <Ripple rippleColor='transparent' style={modal_s.modal_f} onPress={()=>setShowModal(false)}/>
+                <View style={modal_s.modal_f}>
+                    <View style={modal_s.modal_ch}>
+                        <Ripple style={modal_s.modal_btn} onPress={()=>_change_modal_icon(1)}>
+                            <Text style={modal_s.modal_btn_text}>
+                                پر بازدیدترین
+                            </Text>
+                            {
+                                selectIcon==1?
+                                    <MAIcon name='circle-slice-8' size={22} color='#00dd00'/>
+                                :
+                                    <MAIcon name='circle-outline' size={22} />
+                            }
+                        </Ripple>
+                        <Ripple style={modal_s.modal_btn} onPress={()=>_change_modal_icon(2)}>
+                            <Text style={modal_s.modal_btn_text}>
+                                پرفروش ترین
+                            </Text>
+                            {
+                                selectIcon==2?
+                                    <MAIcon name='circle-slice-8' size={22} color='#00dd00'/>
+                                :
+                                    <MAIcon name='circle-outline' size={22} />
+                            }             
+                        </Ripple>
+                        <Ripple style={modal_s.modal_btn} onPress={()=>_change_modal_icon(3)}>
+                            <Text style={modal_s.modal_btn_text}>
+                                قیمت از زیاد به کم 
+                            </Text>
+                            {
+                                selectIcon==3?
+                                    <MAIcon name='circle-slice-8' size={22} color='#00dd00'/>
+                                :
+                                    <MAIcon name='circle-outline' size={22} />
+                            }                
+                        </Ripple>
+                        <Ripple style={modal_s.modal_btn} onPress={()=>_change_modal_icon(4)}>
+                            <Text style={modal_s.modal_btn_text}>
+                                قیمت از کم به زیاد 
+                            </Text>
+                            {
+                                selectIcon==4?
+                                    <MAIcon name='circle-slice-8' size={22} color='#00dd00'/>
+                                :
+                                    <MAIcon name='circle-outline' size={22} />
+                            }  
+                        </Ripple>
+                        <Ripple style={modal_s.modal_btn} onPress={()=>_change_modal_icon(5)}>
+                            <Text style={modal_s.modal_btn_text}>
+                                جدیدترین 
+                            </Text>
+                            {
+                                selectIcon==5?
+                                    <MAIcon name='circle-slice-8' size={22} color='#00dd00'/>
+                                :
+                                    <MAIcon name='circle-outline' size={22} />
+                            }  
+                        </Ripple>
                     </View>
-             </Modal>
-       
-        
+                </View>
+                <Ripple rippleColor='transparent' style={modal_s.modal_f} onPress={()=>setShowModal(false)}/>
+            </Modal>
         )
     }
   
     const modal_s = StyleSheet.create({
         modal_f:{
             flex:1,
-            backgroundColor:'rgba(0,0,0,0,7)',
-            justifyContent:'center',
+            backgroundColor:'rgba(0,0,0,0.7)',
             alignItems:'center',
+            justifyContent:"center",
         },
         modal_ch:{
             width:w/1.2,
-            height:300,
+            height:null,
             backgroundColor:'#fff',
-
+            alignItems:'flex-end'
         },
         modal_btn:{
             flexDirection:'row',
-            alignItems:'center',
+            alignItems:"center",
+            paddingTop:10,
+            paddingBottom:10,
+            paddingRight:30,
+            marginTop:2.5,
+            marginBottom:2.5,
+        },
+        modal_btn_text:{
+            marginRight:25,
+            color:'#333'
         }
     })
     const Full= (props) =>{
@@ -195,36 +261,23 @@ const Offs= () => {
 
     return(
         
-            <View style={styles.container}>
-             
-                <A_header />
-
-                
-                <View style={modal_s.modal_ch}>
-                    
-                        <Ripple style={modal_s.modal_btn} onPress={()=> setShowModal(false)}>
-                                    <Text>پربازدیدترین</Text>
-                                    <MAIcon name='circle-outline' size={22} />
-                        </Ripple>
-                    
-                </View>
-                    
-
-                <View style={{margin:8,flexDirection:'row',flexWrap:'wrap',justifyContent:'space-between'}}>
-                {
-                    kala.map((item,key)=>(
-                        change_box_state===1?
-                            <Full data={item}/>
+        <View style={styles.container}>
+        <Modall />
+        <A_header />
+        <View style={{margin:8,flexDirection:'row',flexWrap:'wrap',justifyContent:'space-between'}}>
+            {
+                kala.map((item,key)=>(
+                    change_box_state===1?
+                        <Full data={item}/>
+                    :
+                        change_box_state===2?
+                            <Two data={item}/>
                         :
-                            change_box_state===2?
-                                <Two data={item}/>
-                            :
-                                <Half data={item}/>
-                    ))
-                }
-            </View>
-             
-          </View>
+                            <Half data={item}/>
+                ))
+            }
+        </View>
+    </View>
   
       
     )

@@ -1,19 +1,40 @@
-import React from 'react'
-import { ScrollView } from 'react-native'
-import KalaOne from '../components/category_page/kala1'
-import KalaTwo from '../components/category_page/kala2'
-import KalaThree from '../components/category_page/kala3'
+import React, { Component } from 'react'
+import { Container, Header, Tab, Tabs, ScrollableTab } from 'native-base'
 
-const Category=()=>{
-    return(
-        <ScrollView style={{backgroundColor:'#f3f3f3',}}>
-            <KalaOne />
-            <KalaTwo />
-            <KalaThree />
-
-        </ScrollView>
-    )
-}
-
+const Category=(prpos)=>{ 
+    return (
+      <Container>
+     <Tabs  renderTabBar={()=> <ScrollableTab />}>
+          <Tab heading="Tab1">
+           
+          </Tab>
+          <Tab heading="Tab2">
+            
+          </Tab>
+          <Tab heading="Tab3">
+          
+          </Tab>
+          <Tab heading="Tab1">
+           
+           </Tab>
+           <Tab heading="Tab2">
+             
+           </Tab>
+           <Tab heading="Tab3">
+           
+           </Tab>
+           <Tab heading="Tab1">
+           
+           </Tab>
+           <Tab heading="Tab2">
+             
+           </Tab>
+           <Tab heading="Tab3">
+           
+           </Tab>
+        </Tabs>
+      </Container>
+        );
+     }
 
 export default React.memo(Category)

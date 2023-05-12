@@ -2,7 +2,7 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Main from './src/screens/main';
-import Category from './src/screens/category';
+import AboutCategory from './src/screens/about_category';
 import Off from './src/screens/off';
 import Kala from './src/screens/kala';
 import Shop_cart from './src/screens/shop_cart'
@@ -10,12 +10,13 @@ import Login from './src/screens/Login'
 import SignOn from './src/screens/signOn';
 import Forget_Pass from './src/screens/forget_pass';
 import Search from './src/screens/search';
+import Category from './src/screens/category';
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Off'>
+      <Stack.Navigator initialRouteName='Category'>
         <Stack.Screen
           name="Main"
           component={Main}
@@ -23,8 +24,8 @@ const MyStack = () => {
         />
 
         <Stack.Screen
-          name="Category"
-          component={Category}     
+          name="AboutCategory"
+          component={AboutCategory}     
         />
 
        <Stack.Screen
@@ -59,6 +60,11 @@ const MyStack = () => {
         <Stack.Screen
           name="Search"
           component={Search}     
+        />
+
+       <Stack.Screen
+          name="Category"
+          component={Category}     
         />
 
       </Stack.Navigator>

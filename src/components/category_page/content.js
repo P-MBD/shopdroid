@@ -1,6 +1,6 @@
 import React from 'react'
-import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native'
-
+import {View, Text, Image, StyleSheet, TouchableOpacity,Dimensions} from 'react-native'
+const w = Dimensions.get('screen').width;
 const Content = () => {
     return(
         <View style={{flex:1}}>
@@ -17,3 +17,5 @@ const styles = StyleSheet.create({
             backgroundColor:'gray'
         }
 })
+
+export default React.memo(Content)

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Container, Header, Tab, Tabs, ScrollableTab } from 'native-base'
-
+import Content from '../components/category_page/content';
 const Category=(prpos)=>{ 
     return (
       <Container>
      <Tabs  renderTabBar={()=> <ScrollableTab />}>
           <Tab heading="Tab1">
-           
+              <Content />
           </Tab>
           <Tab heading="Tab2">
             

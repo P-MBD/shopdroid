@@ -9,7 +9,7 @@ const AboutCategory=()=>{
         <ScrollView style={{backgroundColor:'#f3f3f3',}}>
             <KalaOne />
             <KalaTwo />
-            <KalaThree />
+           
 
         </ScrollView>
     )

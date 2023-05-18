@@ -1,9 +1,13 @@
-import React, { memo } from 'react'
-import {View,Text,StyleSheet,FlatList, Image, Dimensions} from 'react-native'
-import { kala } from '../../data/dataArray'
+import React from 'react'
+import {View,Text,StyleSheet,FlatList,Image,Dimensions} from 'react-native'
+import {kala} from '../../data/dataArray'
+import Ripple from 'react-native-material-ripple'
+
+
 const w = Dimensions.get('window').width;
+
 const KalaTwo = () => {
-    
+   
     return(
         <View>
             <View style={styles.head}>
@@ -11,7 +15,7 @@ const KalaTwo = () => {
                     لیست کامل
                 </Text>
                 <Text style={styles.head_right}>
-                    جدیدترین محصولات
+                    جدیدترین محصولات  
                 </Text>
             </View>
             <FlatList 
@@ -19,83 +23,94 @@ const KalaTwo = () => {
                 showsHorizontalScrollIndicator={false}
                 data={kala}
                 renderItem={({item,index})=>
-                    <View style={styles.flatlist_style}>
-                        <Image  
-                        style={styles.img}
-                        source={{uri:item.img}}
-                        />
-
+                    <Ripple style={styles.box} onPress={()=>navigate('Kala',{header_name:item.pname})}>
+                        <View style={styles.view_img}>
+                            <Image 
+                                style={styles.img}
+                                source={{uri:item.img}}
+                            />
+                        </View>
                         <View style={styles.view_name}>
                             <Text style={styles.text_name}>
-                                {item.name}
+                                {item.pname}
                             </Text>
                         </View>
-
                         <View style={styles.view_price}>
                             <Text style={styles.text_price}>
-                                {item.price}
+                                 {item.price} تومان
                             </Text>
                         </View>
-
-
-                    </View>
-                    
+                    </Ripple>
                 }
             
             />
         </View>
+
     )
 }
 
-const styles= StyleSheet.create({
+const styles = StyleSheet.create({
     head:{
         flex:1,
         flexDirection:'row',
         justifyContent:'space-between',
-        padding: 10
+        padding:10
     },
     head_left:{
         color:'#0052cc',
-        fontSize:16
+        fontSize:13,
+        fontFamily:'IRANSansMobile_Light'
     },
     head_right:{
-        fontSize:18,
-        fontWeight:'bold'
+        fontSize:16,
+        color:'#666',
+        fontWeight:'bold',
+        fontFamily:'IRANSansMobile_Light'
     },
-    flatlist_style:{
+    box:{
         backgroundColor:'#fff',
         flexDirection:'column',
-        justifyContent:'center',
-        alignContent:'center',
-        width:w/3,
-        height:w/2.6,
-        marginLeft:5,
-        marginRight:10,
+        width:w/2.8,
+        height:w/1.8,
+        marginLeft:3,
+        marginRight:5,
         marginBottom:8,
-        borderRadius:10
-
+        borderRadius:2,
+        borderColor:'#ddd',
+        borderWidth:0.5
+    },
+    view_img:{
+        width:'100%',
+        height:'65%',
+        alignItems:'center',
+        justifyContent:'center'
     },
     img:{
         width:'90%',
-        height:'60%',
-        resizeMode:'cover'
-
+        height:'100%',
+        resizeMode:'contain'
     },
     view_name:{
-        marginTop:15,
-        padding:5,
-    },
-    text_name:{
-        fontSize:16
-    },
-    view_price:{
-        borderTopWidth:0.5,
+        height:'20%',
         padding:5
     },
+    text_name:{
+        fontSize:12,
+        color:'#333',
+        textAlign:'right'
+    },
+    view_price:{
+        height:'15%',
+        borderTopWidth:0.4,
+        borderColor:'#eee',
+        padding:5,
+        justifyContent:'center'
+    },
     text_price:{
-        color:'green'
+        color:'#14dc17',
+        fontSize:13,
+        textAlign:'left'
     }
-
 })
 
-export default React.memo(KalaTwo)
+export default React.memo(KalaTwo);

@@ -8,12 +8,15 @@ import kala1 from '../components/main_page/kala1';
 import Kala1 from '../components/main_page/kala1';
 import kala2 from '../components/main_page/kala2';
 import Kala2 from '../components/main_page/kala2';
+import Amazing_Auggestion from '../components/main_page/amazing_suggestion'
+
 const Main = () => {
     return (
      <ScrollView style={{backgroundColor:'#f3f3f3',}}>
          <Slider />
          <Cat />
          <Offer />
+         <Amazing_Auggestion />
          <Off />
          <Kala1/>
          <Kala2 />

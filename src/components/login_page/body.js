@@ -3,7 +3,7 @@ import { View,StyleSheet,TextInput,TouchableOpacity,CheckBox,Text } from 'react-
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import Ripple from 'react-native-material-ripple'
 
-const Content = ()=>{
+const Body = ()=>{
     const [user,setUser]=useState(false)
     const [pass,setpass]=useState(false)
     _changeBorderUser=()=>{
@@ -158,4 +158,4 @@ const styles= StyleSheet.create({
     },
 })
 
-export default React.memo(Content)
+export default React.memo(Body)

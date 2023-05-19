@@ -49,6 +49,7 @@ const Amazing_Auggestion = () => {
                         </View>
                     </Ripple>
                 }
+                
                
             
             />

@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 const My_Header = (props) => {
    
 
-    const Main_Header =()=>{
+const Main_Header =()=>{
         return(
             <Header style={styles.bg_red} androidStatusBarColor="#ef394e">
                 <Left style={styles.row}>
@@ -99,18 +99,67 @@ const My_Header = (props) => {
         )
     }
 
-
+    const Cart_Header =()=>{
+        return(
+            <Header style={styles.bg_red} androidStatusBarColor="#ef394e">
+                <Left style={styles.row}>
+                    <Ripple style={styles.btn}>
+                        <MCIcon name='cart' style={styles.icon}/>
+                    </Ripple>
+                </Left>
+    
+                <Right style={styles.row}>
+                    <Text style={styles.texth3}>
+                        سبد خرید شما
+                    </Text>
+                    <Ripple style={styles.btn} onPress={()=>goBack(null)}>
+                        <MIcon name='close' style={[styles.icon,{color:'#333'}]}/>
+                    </Ripple>
+                </Right>
+            </Header>
+        )
+    }
+    
+    const Login_Header =()=>{
+        return(
+            <Header style={styles.bg_red} androidStatusBarColor="#ef394e">
+                <Left style={styles.row}>
+                    <Ripple style={styles.btn} onPress={()=>navigate('Shop_cart')}>
+                        <MCIcon name='cart' style={styles.icon}/>
+                    </Ripple>
+                    <Ripple style={styles.btn} onPress={()=>navigate('Search')}>
+                        <MIcon name='search' style={styles.icon}/>
+                    </Ripple>
+                </Left>
+    
+                <Right style={styles.row}>
+                    <Text style={styles.texth3}>
+                        {props.head_page_name}
+                    </Text>
+                    <Ripple style={styles.btn} onPress={()=>goBack(null)}> 
+                        <MIcon name='close' style={[styles.icon,{color:'#333'}]}/>
+                    </Ripple>
+                </Right>
+            </Header>
+        )
+    }
 
 
 
     switch(props.head_name){
         case 'Main':
             return Main_Header();
+            break;   
+        case 'Cart':
+            return Cart_Header();
             break;
-        
+        case 'Login':
+            return Login_Header();
+            break;
     }
 
     
 }
+
 
 export default React.memo(My_Header);

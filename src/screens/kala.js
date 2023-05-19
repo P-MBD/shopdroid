@@ -9,9 +9,18 @@ import Rating from '../components/kala_page/rating'
 import Cat from '../components/kala_page/cat'
 import Pro_similar from '../components/kala_page/pro_similar'
 import Pro_other_by from '../components/kala_page/pro_other_by'
+import My_Header from '../components/header/my_header'
+
+let props={
+    head_name:'Main',
+    head_page_name:'گوشی موبایل',
+    right_btn:'back',
+}
+
 const Kala = () =>{
     return(
         <ScrollView style={{backgroundColor:'#eee'}}>
+            <My_Header {...props} /> 
         <Slider />
         <Sharee />
         <View style={{marginLeft:20,marginRight:20}}>

@@ -143,7 +143,20 @@ const Main_Header =()=>{
             </Header>
         )
     }
-
+    const ForgetPass_Header =()=>{
+        return(
+            <Header style={styles.bg_red} androidStatusBarColor="#ef394e">
+                <Right style={styles.row}>
+                    <Text style={styles.texth3}>
+                        {props.head_page_name}
+                    </Text>
+                    <Ripple style={styles.btn} onPress={()=>goBack(null)}>
+                        <MIcon name='close' style={styles.icon}/>
+                    </Ripple>
+                </Right>
+            </Header>
+        )
+    }
 
 
     switch(props.head_name){
@@ -155,6 +168,9 @@ const Main_Header =()=>{
             break;
         case 'Login':
             return Login_Header();
+            break;
+        case 'ForrgetPass':
+            return ForgetPass_Header();
             break;
     }
 

@@ -17,7 +17,7 @@ const MyStack = () => {
   return (
     <NavigationContainer>
        <Stack.Navigator
-      initialRouteName="Forget_Pass"
+      initialRouteName="Category"
       screenOptions={{
         headerShown: false
       }}

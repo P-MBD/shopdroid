@@ -158,6 +158,55 @@ const Main_Header =()=>{
         )
     }
 
+    const Search_Header =()=>{
+        return(
+            <Header style={styles.bg_white} androidStatusBarColor="#ef394e">
+                <Left style={styles.row}>
+                    <Ripple style={styles.btn}>
+                        <MCIcon name='qrcode-scan' style={styles.icongray}/>
+                    </Ripple>
+                    <Ripple style={styles.btn}>
+                        <MIcon name='mic' style={styles.icongray}/>
+                    </Ripple>
+                </Left>
+
+                <Right style={styles.row}>
+                    <TextInput 
+                        style={styles.search_textinput}
+                        placeholder="جستجو در دیجی کالا ..."
+                        placeholderTextColor='#888'
+                        selectionColor="red"
+                    />
+                    <Ripple style={styles.btn} onPress={()=>goBack(null)}>
+                        <MIcon name='arrow-back' style={[styles.icongray,{rotation:180}]}/>
+                    </Ripple>
+                </Right>
+            </Header>
+        )
+    }
+    const Cat_Header =()=>{
+        return(
+            <Header hasTabs style={styles.bg_red} androidStatusBarColor="#ef394e">
+                <Right style={styles.row}>
+                    {
+                        props.name_page?
+                            <Text style={styles.texth3}>
+                                {props.name_page}
+                            </Text>
+                        :
+                            <Text style={styles.texth3}>
+                                دسته بندی محصولات
+                            </Text>
+                    }
+                    <Ripple style={styles.btn} onPress={()=>goBack(null)}>
+                        <MIcon name='arrow-back' style={[styles.icon,{rotation:180}]}/>
+                    </Ripple>
+                </Right>
+            </Header>
+        )
+    }
+
+
 
     switch(props.head_name){
         case 'Main':
@@ -171,6 +220,12 @@ const Main_Header =()=>{
             break;
         case 'ForrgetPass':
             return ForgetPass_Header();
+            break;
+        case 'Search':
+            return Search_Header();
+            break;
+        case 'Cat':
+            return Cat_Header();
             break;
     }
 

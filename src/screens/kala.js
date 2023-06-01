@@ -28,11 +28,12 @@ const Kala = () =>{
             <Warranty />
             <Disc />
             <Rating />
+         </View>
             <Cat />
             <Pro_similar />
             <Pro_other_by />
             
-        </View>
+      
    </ScrollView>
     )
 }

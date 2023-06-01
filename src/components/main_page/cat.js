@@ -1,8 +1,9 @@
 import React from 'react'
 import { ScrollView,TouchableOpacity,Text,StyleSheet } from 'react-native'
 import { cat_list } from '../../data/dataArray'
-
+import { useNavigation } from '@react-navigation/native';
 const Cat=()=>{
+    const {navigate} = useNavigation();
     return(
         <ScrollView
         style={styles.container} 
@@ -11,7 +12,7 @@ const Cat=()=>{
         >
             {
                 cat_list.map((item,key)=>(
-                    <TouchableOpacity style={styles.btn} >
+                    <TouchableOpacity style={styles.btn} onPress={() => navigate('Category')} >
                         <Text style={styles.text}>
                             {item.name}
                         </Text>

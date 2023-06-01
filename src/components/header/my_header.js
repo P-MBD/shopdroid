@@ -4,7 +4,7 @@ import { Container, Header, Left, Body, Right, Button, Title } from 'native-base
 import Ripple from 'react-native-material-ripple'
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import MIcon from 'react-native-vector-icons/MaterialIcons'
-
+import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
     bg_red:{
@@ -58,17 +58,17 @@ const styles = StyleSheet.create({
 
 
 const My_Header = (props) => {
-   
+   const {navigate,goBack} = useNavigation();
 
-const Main_Header =()=>{
+    const Main_Header =()=>{
         return(
             <Header style={styles.bg_red} androidStatusBarColor="#ef394e">
-                <Left style={styles.row}>
-                    <Ripple style={styles.btn} onPress={()=>navigate('Shop_cart')}>
+                <Left style={styles.row} >
+                    <Ripple style={styles.btn}   onPress={() => navigate('Shop_cart')}>
                         <MCIcon name='cart' style={styles.icon}/>
                     </Ripple>
-                    <Ripple style={styles.btn} onPress={()=>navigate('Search')}>
-                        <MIcon name='search' style={styles.icon}/>
+                    <Ripple style={styles.btn}  >
+                        <MIcon name='search' style={styles.icon} onPress={()=>navigate('Search')}/>
                     </Ripple>
                 </Left>
 
@@ -86,11 +86,11 @@ const Main_Header =()=>{
                     
                     {
                         props.right_btn=='back'?
-                            <Ripple style={styles.btn} onPress={()=>goBack(null)}>
+                            <Ripple style={styles.btn} onPress={()=>goBack(null)} >
                                 <MIcon name='arrow-back' style={[styles.icon,{rotation:180}]} />
                             </Ripple>
                         :
-                            <Ripple style={styles.btn} onPress={()=>toggleDrawer()}>
+                            <Ripple style={styles.btn} >
                                 <MCIcon name='menu' style={styles.icon} />
                             </Ripple>
                     }
@@ -112,7 +112,7 @@ const Main_Header =()=>{
                     <Text style={styles.texth3}>
                         سبد خرید شما
                     </Text>
-                    <Ripple style={styles.btn} onPress={()=>goBack(null)}>
+                    <Ripple style={styles.btn} onPress={()=>goBack(null)} >
                         <MIcon name='close' style={[styles.icon,{color:'#333'}]}/>
                     </Ripple>
                 </Right>
@@ -124,11 +124,11 @@ const Main_Header =()=>{
         return(
             <Header style={styles.bg_red} androidStatusBarColor="#ef394e">
                 <Left style={styles.row}>
-                    <Ripple style={styles.btn} onPress={()=>navigate('Shop_cart')}>
+                    <Ripple style={styles.btn}  onPress={()=>navigate('Shop_cart')}>
                         <MCIcon name='cart' style={styles.icon}/>
                     </Ripple>
-                    <Ripple style={styles.btn} onPress={()=>navigate('Search')}>
-                        <MIcon name='search' style={styles.icon}/>
+                    <Ripple style={styles.btn} >
+                        <MIcon name='search' style={styles.icon} onPress={()=>navigate('Search')}/>
                     </Ripple>
                 </Left>
     
@@ -136,7 +136,7 @@ const Main_Header =()=>{
                     <Text style={styles.texth3}>
                         {props.head_page_name}
                     </Text>
-                    <Ripple style={styles.btn} onPress={()=>goBack(null)}> 
+                    <Ripple style={styles.btn} > 
                         <MIcon name='close' style={[styles.icon,{color:'#333'}]}/>
                     </Ripple>
                 </Right>
@@ -150,7 +150,7 @@ const Main_Header =()=>{
                     <Text style={styles.texth3}>
                         {props.head_page_name}
                     </Text>
-                    <Ripple style={styles.btn} onPress={()=>goBack(null)}>
+                    <Ripple style={styles.btn} >
                         <MIcon name='close' style={styles.icon}/>
                     </Ripple>
                 </Right>
@@ -178,7 +178,7 @@ const Main_Header =()=>{
                         selectionColor="red"
                     />
                     <Ripple style={styles.btn} onPress={()=>goBack(null)}>
-                        <MIcon name='arrow-back' style={[styles.icongray,{rotation:180}]}/>
+                        <MIcon name='arrow-back' style={[styles.icongray,{rotation:180}]} />
                     </Ripple>
                 </Right>
             </Header>
@@ -198,8 +198,8 @@ const Main_Header =()=>{
                                 دسته بندی محصولات
                             </Text>
                     }
-                    <Ripple style={styles.btn} onPress={()=>goBack(null)}>
-                        <MIcon name='arrow-back' style={[styles.icon,{rotation:180}]}/>
+                    <Ripple style={styles.btn} onPress={()=>goBack(null)} >
+                        <MIcon name='arrow-back' style={[styles.icon,{rotation:180}]} />
                     </Ripple>
                 </Right>
             </Header>

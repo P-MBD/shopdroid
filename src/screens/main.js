@@ -18,9 +18,9 @@ const Main = () => {
          <My_Header head_name={'Main'}/>
          <Slider />
          <Cat />
-         <Offer />
          <Amazing_Auggestion />
          <Off />
+         <Offer />
          <Kala1/>
          <Kala2 />
 

@@ -8,10 +8,12 @@ import FIcon from 'react-native-vector-icons/Feather'
 import SIcon from 'react-native-vector-icons/SimpleLineIcons'
 import MAIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { kala } from '../../data/dataArray';
+import { useNavigation } from '@react-navigation/native';
 
 const w= Dimensions.get('window').width;
 
 const Offs= () => {
+    const {navigate} = useNavigation();
     const [change_box_state,setChange_box_state]=useState(1)
     const[change_box_icon, setChange_box_icon]= useState( <FIcon name="grid" style={styles.head_icon} />)
     const[showModal, setShowModal]= useState(false)
@@ -160,7 +162,7 @@ const Offs= () => {
     })
     const Full= (props) =>{
         return(
-            <View style={full_s.box}>
+            <Ripple style={full_s.box} onPress={()=>navigate('Kala')}>
                 <View styles={full_s.sec1}>
                     <View style={full_s.image_box}>
                       <Image source={{uri:props.data.img}} style={full_s.image}/>
@@ -187,7 +189,7 @@ const Offs= () => {
                         <Text style={full_s.s_s_text}>پیشنهاد ویژه</Text>
                     </View>
                 </View>
-            </View>
+            </Ripple>
         )
 
        
@@ -195,7 +197,7 @@ const Offs= () => {
 
     const Half =(props)=>{
         return(
-            <View style={half_s.box} >
+            <Ripple style={half_s.box} onPress={()=>navigate('Kala')}>
                 <View style={half_s.left}>
                     <View style={half_s.box_name}>
                           <Text style={full_s.pName}>
@@ -223,13 +225,13 @@ const Offs= () => {
                 <View style={half_s.right}>
                 <Image source={{uri:props.data.img}}  style={half_s.image}/>
                 </View>
-            </View>
+            </Ripple>
         )
     }
 
     const Two= (props) =>{
         return(
-            <View style={two_s.box}>
+            <Ripple style={two_s.box} onPress={()=>navigate('Kala')}>
                 <View styles={two_s.sec1}>
                     <View style={two_s.image_box}>
                       <Image source={{uri:props.data.img}} style={two_s.image}/>
@@ -253,7 +255,7 @@ const Offs= () => {
                         <Text style={two_s.s_s_text}>پیشنهاد ویژه</Text>
                     </View>
                 </View>
-            </View>
+            </Ripple>
         )
 
        

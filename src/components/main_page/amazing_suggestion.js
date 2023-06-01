@@ -3,11 +3,13 @@ import {View,Text,StyleSheet,FlatList,Image,Dimensions} from 'react-native'
 import {kala} from '../../data/dataArray'
 import Ripple from 'react-native-material-ripple'
 import CountDown from 'react-native-countdown-component';
+import { useNavigation } from '@react-navigation/native';
+
 
 const w = Dimensions.get('window').width;
 
 const Amazing_Auggestion = () => {
-
+    const {navigate} = useNavigation();
     return(
         <View style={{marginTop:10}}>
             <View style={styles.head}>
@@ -30,7 +32,7 @@ const Amazing_Auggestion = () => {
                 showsHorizontalScrollIndicator={false}
                 data={kala}
                 renderItem={({item,index})=>
-                    <Ripple style={styles.box}>
+                    <Ripple style={styles.box} onPress={()=>navigate('Kala')}>
                         <View style={styles.view_img}>
                             <Image 
                                 style={styles.img}

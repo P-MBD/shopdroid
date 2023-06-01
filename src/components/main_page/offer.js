@@ -2,18 +2,18 @@ import React from 'react'
 import {View,Image,StyleSheet,Dimensions} from 'react-native'
 import Ripple from 'react-native-material-ripple'
 import {offer_list} from '../../data/dataArray'
-
+import { useNavigation } from '@react-navigation/native';
 const w = Dimensions.get('window').width;
 
 const Offer = () => {
-    
+    const {navigate} = useNavigation();
     return(
         <View style={styles.container}>
             {
                 offer_list.map((item,key)=>(
                     key==2?
                     (
-                        <Ripple style={styles.one_box} >
+                        <Ripple style={styles.one_box} onPress={()=>navigate('Off')}>
                             <Image 
                                 style={styles.img}
                                 source={{uri:item.img}}
@@ -22,7 +22,7 @@ const Offer = () => {
                     )
                     :
                     (
-                        <Ripple style={styles.two_box} >
+                        <Ripple style={styles.two_box} onPress={()=>navigate('Off')} >
                             <Image 
                                 style={styles.img}
                                 source={{uri:item.img}}

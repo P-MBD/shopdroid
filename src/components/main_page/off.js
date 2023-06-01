@@ -2,11 +2,12 @@ import React from 'react'
 import {Image,StyleSheet,Dimensions} from 'react-native'
 import Ripple from 'react-native-material-ripple'
 import { off_list } from '../../data/dataArray'
-
+import { useNavigation } from '@react-navigation/native';
 const w = Dimensions.get('window').width;
 const Off=()=>{
+    const {navigate} = useNavigation();
     return(
-        <Ripple style={styles.container}>
+        <Ripple style={styles.container} onPress={() => navigate('Kala')}>
             {
                     off_list.map((item,key)=>(
                         <Image

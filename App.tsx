@@ -17,7 +17,7 @@ const MyStack = () => {
   return (
     <NavigationContainer>
        <Stack.Navigator
-      initialRouteName="SignOn"
+      initialRouteName="Off"
       screenOptions={{
         headerShown: false
       }}

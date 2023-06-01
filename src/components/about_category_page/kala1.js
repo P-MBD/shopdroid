@@ -2,12 +2,12 @@ import React from 'react'
 import {View,Text,StyleSheet,FlatList,Image,Dimensions} from 'react-native'
 import {kala} from '../../data/dataArray'
 import Ripple from 'react-native-material-ripple'
-
+import { useNavigation } from '@react-navigation/native';
 
 const w = Dimensions.get('window').width;
 
 const KalaOne = () => {
-
+    const {navigate} = useNavigation();
     return(
         <View>
             <View style={styles.head}>
@@ -23,7 +23,7 @@ const KalaOne = () => {
                 showsHorizontalScrollIndicator={false}
                 data={kala}
                 renderItem={({item,index})=>
-                    <Ripple style={styles.box}>
+                    <Ripple style={styles.box} onPress={()=>navigate('Kala')}>
                         <View style={styles.view_img}>
                             <Image 
                                 style={styles.img}

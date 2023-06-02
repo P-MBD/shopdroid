@@ -7,7 +7,7 @@ const w = Dimensions.get('window').width;
 const Off=()=>{
     const {navigate} = useNavigation();
     return(
-        <Ripple style={styles.container} onPress={() => navigate('Kala')}>
+        <Ripple style={styles.container} onPress={() => navigate('Off')}>
             {
                     off_list.map((item,key)=>(
                         <Image

@@ -3,8 +3,12 @@ import {View,StyleSheet,Text,Dimensions,TouchableOpacity} from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Ripple from 'react-native-material-ripple'
+import { useNavigation } from '@react-navigation/native';
+
 const w= Dimensions.get('window').width
+
 const Warranty = () =>{
+    const {navigate} = useNavigation();
     const [border_color,set_border_color]=useState('black')
     const _changeBorderColor=(color)=>{
         set_border_color(color)
@@ -71,7 +75,7 @@ const Warranty = () =>{
                     <Text style={styles.sec3_text1}>7199000 تومان</Text>
                     <Text style={styles.sec3_text2}>7199000 تومان</Text>
                 </View>
-                <Ripple style={styles.sec3_btn}>
+                <Ripple style={styles.sec3_btn} onPress={()=>navigate('Shop_cart')}>
                     <Text style={styles.sec3_btn_text}>افزودن به سبد خرید</Text>
                     <MaterialIcons name='add-shopping-cart' color='#fff' style={[styles.icon_ml,styles.text_color_gray]} />
                 </Ripple>

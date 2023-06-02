@@ -2,8 +2,10 @@ import React,{useState} from 'react'
 import { View,StyleSheet,TextInput,TouchableOpacity,CheckBox,Text } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import Ripple from 'react-native-material-ripple'
+import { useNavigation } from '@react-navigation/native';
 
 const Body = ()=>{
+    const {navigate} = useNavigation();
     const [user,setUser]=useState(false)
     const [pass,setpass]=useState(false)
     _changeBorderUser=()=>{
@@ -66,10 +68,10 @@ const Body = ()=>{
                 </View>  
 
                 <View style={styles.sec3}>
-                    <Text style={styles.sec3_text1}>
+                    <Text style={styles.sec3_text1} onPress={()=>navigate('Forget_Pass')}>
                         کلمه عبور را فراموش کرده ام!
                     </Text>
-                    <Text style={styles.sec3_text2}>
+                    <Text style={styles.sec3_text2} onPress={()=>navigate('SignOn')}>
                         ثبت نام در دیجی کالا
                     </Text>
                 </View>

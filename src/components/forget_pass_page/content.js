@@ -7,7 +7,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
-
+import { useNavigation } from '@react-navigation/native';
 
 
 const w = Dimensions.get('window').width;
@@ -16,6 +16,7 @@ const CELL_COUNT = 6;
 
 
 const Content =() => {
+  const {navigate} = useNavigation();
   const [value, setValue] = useState('');
   const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({

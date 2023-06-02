@@ -63,12 +63,12 @@ const My_Header = (props) => {
     const Main_Header =()=>{
         return(
             <Header style={styles.bg_red} androidStatusBarColor="#ef394e">
-                <Left style={styles.row} >
-                    <Ripple style={styles.btn}   onPress={() => navigate('Shop_cart')}>
+                  <Left style={styles.row}>
+                    <Ripple style={styles.btn} onPress={()=>navigate('Shop_cart')}>
                         <MCIcon name='cart' style={styles.icon}/>
                     </Ripple>
-                    <Ripple style={styles.btn}  >
-                        <MIcon name='search' style={styles.icon} onPress={()=>navigate('Search')}/>
+                    <Ripple style={styles.btn} onPress={()=>navigate('Search')}>
+                        <MIcon name='search' style={styles.icon}/>
                     </Ripple>
                 </Left>
 

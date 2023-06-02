@@ -1,14 +1,16 @@
 import React from 'react'
 import {View, Text, Image, StyleSheet, FlatList,Dimensions,TouchableOpacity} from 'react-native'
 import {cat_item} from '../../data/dataArray'
+import { useNavigation } from '@react-navigation/native';
 const w = Dimensions.get('screen').width;
 const Content = () => {
+    const {navigate} = useNavigation();
     return(
         <View style={{flex:1}}>
             <FlatList 
                 data={cat_item}
                 renderItem={({item,key})=>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={()=>navigate('AboutCategory')}>
                         <Image 
                          style={styles.img}
                          source={{uri:item.img}} />

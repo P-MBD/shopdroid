@@ -60,7 +60,10 @@ const styles = StyleSheet.create({
 
 const My_Header = (props) => {
    const {navigate,goBack} = useNavigation();
-   console.log("props", props);
+   const openDrawer = () =>{
+    navigate.openDrawer();
+   };
+   
 
     const Main_Header =()=>{
         return(
@@ -93,7 +96,7 @@ const My_Header = (props) => {
                             </Ripple>
                         :
                             <Ripple style={styles.btn}  >
-                                <MCIcon name='menu' style={styles.icon} />
+                                <MCIcon name='menu' style={styles.icon} onPress={openDrawer} />
                             </Ripple>
                     }
                 </Right>

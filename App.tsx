@@ -13,10 +13,9 @@ import SignOn from './src/screens/signOn';
 import Forget_Pass from './src/screens/forget_pass';
 import Search from './src/screens/search';
 import Category from './src/screens/category';
-
+import DrawerContent from './src/screens/DrawerContent';
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
-
 const MyStack = () => {
   return (
     <NavigationContainer>
@@ -81,20 +80,17 @@ const MyStack = () => {
   );
 };
 
-
 const MyDrawer = () =>{
   return (
     <NavigationContainer>
     <Drawer.Navigator initialRouteName="Main"
       screenOptions={{
-        headerShown: false
-      }}
-      
-      >
+        headerShown: false }}
+        drawerContent={props => <DrawerContent {...props} />}>
 
         <Drawer.Screen
           name="Main"
-          component={Main}
+         component={Main}
           
         />
 

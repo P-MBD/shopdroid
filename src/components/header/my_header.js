@@ -4,8 +4,8 @@ import { Container, Header, Left, Body, Right, Button, Title } from 'native-base
 import Ripple from 'react-native-material-ripple'
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import MIcon from 'react-native-vector-icons/MaterialIcons'
-import { useNavigation } from '@react-navigation/native';
-
+import {useNavigation } from '@react-navigation/native';
+import { createDrawerNavigator, DrawerActions } from '@react-navigation/drawer';
 
 const styles = StyleSheet.create({
     bg_red:{
@@ -57,16 +57,12 @@ const styles = StyleSheet.create({
 })
 
 
-
 const My_Header = (props) => {
-   const {navigate,goBack} = useNavigation();
-   const openDrawer = () =>{
-    navigate.openDrawer();
-   };
-   
+   const {toggleDrawer,navigate,goBack} = useNavigation();
+ 
 
     const Main_Header =()=>{
-        return(
+        return(          
             <Header style={styles.bg_red} androidStatusBarColor="#ef394e">
                   <Left style={styles.row}>
                     <Ripple style={styles.btn} onPress={()=>navigate('Shop_cart')}>
@@ -96,7 +92,7 @@ const My_Header = (props) => {
                             </Ripple>
                         :
                             <Ripple style={styles.btn}  >
-                                <MCIcon name='menu' style={styles.icon} onPress={openDrawer} />
+                                <MCIcon name='menu' style={styles.icon}  onPress={() => toggleDrawer.openDrawer()}/>
                             </Ripple>
                     }
                 </Right>

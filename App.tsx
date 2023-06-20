@@ -86,11 +86,12 @@ const MyDrawer = () =>{
     <Drawer.Navigator initialRouteName="Main"
       screenOptions={{
         headerShown: false }}
-        drawerContent={props => <DrawerContent {...props} />}>
+      >
 
         <Drawer.Screen
           name="Main"
          component={Main}
+         
           
         />
 

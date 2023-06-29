@@ -25,14 +25,12 @@ const Buttons = ()=>{
 }
 
 const styles=StyleSheet.create({
-
     container:{
         marginTop:10,
         width:null,
-        height:w/12 ,
+        height:w/12,
         flexDirection:'row',
-        justifyContent:'space-between'
-
+        justifyContent:'space-between',
     },
     btn:{
         width:'48%',
@@ -41,15 +39,14 @@ const styles=StyleSheet.create({
         elevation:2,
         alignItems:'center',
         justifyContent:'center',
-        flexDirection:'row',
-
+        flexDirection:'row'
     },
     txt:{
         color:'#7a707f',
-        fontSize:16,
+        fontSize:14,
+        paddingLeft:4,
+        fontFamily:'IRANSansMobile_Light',
     }
-
 })
-
 export default React.memo(Buttons);
 

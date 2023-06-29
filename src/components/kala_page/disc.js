@@ -45,17 +45,23 @@ const Disc = () =>{
 }
 const styles=StyleSheet.create({
     container:{
-        width:null,
-        height:null,
-        marginTop:10,
-        elevation:2,
-        padding:10,
-        backgroundColor:'#fff',
-        paddingBottom:0,
+       width:null,
+       height:null,
+       marginTop:10,
+       elevation:2,
+       padding:10,
+       paddingBottom:0,
+       backgroundColor:'#fff'
     },
     sec1:{
         height:200,
         overflow:'hidden'
+    },
+    sec1_text:{
+        lineHeight:19,
+        color:'#333',
+        textAlign:'right',
+        fontFamily:'IRANSansMobile_Light',
     },
     btn:{
         height:40,
@@ -67,14 +73,9 @@ const styles=StyleSheet.create({
     },
     btn_text:{
         color:'#999',
-        fontSize:14,
-    },
-    sec1_text:{
-        lineHeight:19,
-        color:'#333',
-        textAlign:'right',
+        fontSize:13,
+        fontFamily:'IRANSansMobile_Light',
     }
-
 })
 
 export default React.memo(Disc);

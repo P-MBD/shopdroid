@@ -134,47 +134,49 @@ const Rating = () => {
         
     )
 }
-const styles=StyleSheet.create({
-container:{
-    width:null,
-    height:null,
-    marginTop:10,
-    elevation:2,
-    padding:5,
-    backgroundColor:'#fff'
-},
-sec1:{
-    paddingTop:35,
-    paddingBottom:35,
-     flexDirection:'row',
-     alignItems:'center',
-     justifyContent:'center'
-},
-sec2:{
-    paddingTop:5,
-    paddingBottom:10,
 
-},
-sec2_part:{
-    flexDirection:'row',
-    justifyContent:'space-between',
-    marginBottom:8,
-},
-text_size13:{
-    fontSize:13,
-    color:'#333',
-    marginLeft:5
-},
-text_size11:{
-    fontSize:11,
-    marginLeft:5
-},
-text_color_lightGray:{
-    color:'#bbb'
-},
-text_color_gray:{
-    color:'#888'
-}
+const styles=StyleSheet.create({
+    container:{
+        width:null,
+        height:null,
+        marginTop:10,
+        elevation:2,
+        padding:5,
+        backgroundColor:'#fff'
+    },
+    sec1:{
+        paddingTop:35,
+        paddingBottom:35,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    sec2:{
+        paddingTop:5,
+        paddingBottom:10
+    },
+    sec2_part:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        marginBottom: 8
+    },
+    text_size13:{
+        fontSize:17,
+        color:'#333',
+        marginLeft:5,
+        fontFamily:'B Nazanin',
+    },
+    text_size11:{
+        fontSize:10,
+        marginLeft:5,
+        fontFamily:'IRANSansMobile_Light',
+    },
+    text_color_lightGray:{
+        color:'#bbb'
+    },
+    text_color_gray:{
+        color:'#888'
+    }
 })
 
 export default React.memo(Rating)

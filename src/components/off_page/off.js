@@ -285,63 +285,62 @@ const Offs= () => {
     )
 }
 
-const styles = StyleSheet.create(
-    {
-        container:{
-            flex:1,
-            backgroundColor:'#f1f1f1'
-        },
-        A_header_top:{
-            width:'100%',
-            height:w/10,
-            flexDirection:'row',
-            elevation:4,
-            top:0,
-            backgroundColor:'#fff'
-        },
-        center:{
-            alignItems:'center',
-            justifyContent:'center',
-            height:'100%',
-        },
-        A_header_top_left:{
-            height:'100%',
-            width:'10%',
-            alignItems:'center',
-            justifyContent:'center',
-            left:-4
-        },
-        A_header_top_right:{
-            width:'45%',
-            flexDirection:'row',
-        },
-        border_left_right:{
-            borderLeftWidth:0.4,
-            borderRightWidth:0.4,
-            borderColor:'#666'
-        },
-        head_icon:{
-            fontSize:24,
-            color:'#666',
-            marginLeft:8
-        },
-        a_header_h3_text:{
-            fontSize:14,
-            color:'#666',
-            textAlign:'center',
-        },
-        a_header_h4_text:{
-            fontSize:12,
-            color:'#999',
-            textAlign:'center',
-        },
-
+const styles= StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:'#f1f1f1'
+    },
+    A_header_top:{
+        width:'100%',
+        height:w/10,
+        flexDirection:'row',
+        elevation:4,
+        top:0,
+        backgroundColor:'#fff'
+    },
+    center:{
+        alignItems:'center',
+        justifyContent:'center',
+        height:'100%'
+    },
+    A_header_top_left:{
+        height:'100%',
+        width:'10%',
+        alignItems:'center',
+        justifyContent:'center',
+        left:-4
+    },
+    A_header_top_right:{
+        width:'45%', 
+        flexDirection:'row'
+    },
+    border_left_right:{
+        borderLeftWidth:0.4,
+        borderRightWidth:0.4,
+        borderColor:'#666'
+    },
+    head_icon:{
+        fontSize:24,
+        color:'#666',
+        marginLeft:8
+    },
+    a_header_h3_text:{
+        fontSize:14,
+        color:'#444',
+        textAlign:'center',
+        fontFamily:'IRANSansMobile_Light',
+    },
+    a_header_h4_text:{
+        fontSize:11,
+        color:'#999',
+        textAlign:'center',
+        fontFamily:'IRANSansMobile_Light',
     }
-)
-
+     
+})
 const full_s = StyleSheet.create({
     box:{
-        width:'98%',
+        width:'100%',
         height:w/1.2,
         backgroundColor:'#fff',
         elevation:3,
@@ -353,32 +352,31 @@ const full_s = StyleSheet.create({
         width:'100%',
         height:'80%'
     },
+    image_box:{
+        alignItems:'center',
+        justifyContent:'center',
+        padding:10
+    },
+    image:{
+        width:'60%',
+        height:'60%',
+        resizeMode:'contain'
+    },
     pName:{
         fontSize:14,
         color:'#111',
         marginBottom:10,
         marginTop:30,
+        fontFamily:'IRANSansMobile_Light',
     },
     eName:{
         fontSize:15,
         color:'#777',
         marginBottom:30,
         textAlign:'right',
-
-    },
-    image_box:{
-        alignItems:'center',
-        justifyContent:'center',
-        padding:10,  
-    },
-    image:{
-        width:'60%',
-        height:'60%',
-        resizeMode:'contain',
+        fontFamily:'IRANSansMobile_Light',
     },
     sec2:{
-        width:'100%',
-        height:'25%',
         borderTopWidth:.5,
         borderColor:'#d1d1d1',
         flexDirection:'row',
@@ -389,11 +387,13 @@ const full_s = StyleSheet.create({
         textDecorationLine: 'line-through',
         fontSize:17,
         margin:5,
+        fontFamily:'B Nazanin',
     },
     green_p:{
         color:'#5ecf56',
         fontSize:17,
         margin:5,
+        fontFamily:'B Nazanin',
     } ,
     s_s_text:{
         fontSize:13,
@@ -402,10 +402,9 @@ const full_s = StyleSheet.create({
         backgroundColor:'red',
         borderRadius:3,
         margin:5,
+        fontFamily:'IRANSansMobile_Light',
     }
-    
 })
-
 const half_s = StyleSheet.create({
     box:{
         width:null,
@@ -420,34 +419,35 @@ const half_s = StyleSheet.create({
         height:'100%',
         width:'70%',
     },
-   right:{
-    height:'100%',
-    width:'30%',
-},
-box_price:{
-    width:'100%',
-    height:'30%',
-    flexDirection:'row',
-    justifyContent:'space-between',
-    borderTopWidth:.5,
-    borderColor:'#d1d1d1'
-},
-box_name:{
-    width:'100%',
-    height:'70%',
-},
-image:{
-    width:'95%',
-    height:'80%',
-    resizeMode:'contain'
-}
-
+    box_name:{
+        width:'100%',
+        height:'70%',
+    },
+    box_price:{
+        width:'100%',
+        height:'30%',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        borderTopWidth:.5,
+        borderColor:'#d1d1d1',
+        paddingLeft:6
+    },
+    right:{
+        height:'100%',
+        width:'30%',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    image:{
+        width:'95%',
+        height:'80%',
+        resizeMode:'contain'
+    }
 })
-
 const two_s = StyleSheet.create({
     box:{
         width:'49%',
-        height:w/2.2,
+        height:w/1.8,
         backgroundColor:'#fff',
         elevation:3,
         borderRadius:3,
@@ -456,23 +456,24 @@ const two_s = StyleSheet.create({
     sec1:{
         padding:10,
         width:'100%',
-        height:'70%'
-    },
-    pName:{
-        fontSize:14,
-        color:'#111',
-        marginBottom:15,
-        marginTop:10,
+        height:'75%'
     },
     image_box:{
         alignItems:'center',
         justifyContent:'center',
-        padding:10,  
+        padding:10
     },
     image:{
         width:'70%',
-        height:'70%',
-        resizeMode:'contain',
+        height:'80%',
+        resizeMode:'contain'
+    },
+    pName:{
+        fontSize:13,
+        color:'#111',
+        marginBottom:15,
+        marginTop:10,
+        fontFamily:'IRANSansMobile_Light',
     },
     sec2:{
         width:'100%',
@@ -488,23 +489,28 @@ const two_s = StyleSheet.create({
     red_p:{
         color:'red',
         textDecorationLine: 'line-through',
-        fontSize:12,
-        margin:5,
+        fontSize:17,
+        // margin:5,
+        // marginBottom:7,
+        fontFamily:'B Nazanin',
+        textAlign:'left',
     },
     green_p:{
         color:'#5ecf56',
-        fontSize:13,
-        margin:5,
+        fontSize:17,
+        // margin:5,
+        fontFamily:'B Nazanin',
+        textAlign:'left',
     } ,
     s_s_text:{
-        fontSize:13,
+        fontSize:12,
         color:'#f4f4f4',
         padding:3,
         backgroundColor:'red',
         borderRadius:3,
         margin:5,
+        fontFamily:'IRANSansMobile_Light',
     }
-    
 })
 
 export default React.memo(Offs);

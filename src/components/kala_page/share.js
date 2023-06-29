@@ -48,11 +48,10 @@ const Sharee=()=>{
 
     )
 }
-const styles= StyleSheet.create({
-
+const styles=StyleSheet.create({
     container:{
         width:w,
-        height:w/5,
+        height:null,
         backgroundColor:'#fafafa',
         borderColor:'#ccc',
         borderTopWidth:0.5,
@@ -60,8 +59,6 @@ const styles= StyleSheet.create({
     },
     box1:{
         flexDirection:'row',
-        padding:12,
-        marginLeft:5,
     },
     box2:{
         marginLeft:20,
@@ -70,21 +67,21 @@ const styles= StyleSheet.create({
     p_name:{
         color:'#111',
         fontSize:16,
-        
+        fontFamily:'IRANSansMobile_Light',
     },
     e_name:{
         color:"#777",
         fontSize:14,
         textAlign:'right',
-     
+        fontFamily:'IRANSansMobile_Light',
     },
     btn:{
-        paddingLeft:8,
-        paddingTop:6,
-        paddingRight:8,
-        paddingBottom:6
-    },
-
+        paddingLeft:16,
+        paddingTop:12,
+        paddingRight:18,
+        paddingBottom:12,
+        borderRadius:30
+    }
 })
 
 export default React.memo(Sharee)

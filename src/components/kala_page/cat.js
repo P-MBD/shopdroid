@@ -33,8 +33,8 @@ const styles= StyleSheet.create({
     btn:{
         paddingTop:6,
         paddingBottom:6,
-        paddingRight:12,
-        paddingLeft:12,
+        paddingRight:14,
+        paddingLeft:10,
         backgroundColor:'#fff',
         borderRadius:100,
         marginLeft:5,
@@ -46,6 +46,8 @@ const styles= StyleSheet.create({
     text:{
         color:'#13c3ea',
         fontSize:14,
+        fontFamily:'IRANSansMobile_Light',
+
     }
 })
 

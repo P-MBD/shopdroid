@@ -24,7 +24,7 @@ const Amazing_Auggestion = () => {
                     showSeparator={true}
                 />
                 <Text style={styles.head_right}>
-                    پیشنهاد <Text style={[styles.head_right,{color:'#ef394e'}]}>شفگت انگیز</Text> 
+                    پیشنهاد <Text style={[styles.head_right,{color:'#ef394e',fontFamily:"IRANSansMobile_UltraLight"}]}>شگفت انگیز</Text> 
                 </Text>
             </View>
             <FlatList 
@@ -64,18 +64,18 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection:'row',
         justifyContent:'space-between',
+        alignItems:'center',
         padding:10
     },
     head_left:{
         color:'#0052cc',
-        fontSize:13,
-        fontFamily:'IRANSansMobile_Light'
+        fontSize:14,
     },
     head_right:{
-        fontSize:16,
+        fontSize:18,
         color:'#666',
         fontWeight:'bold',
-        fontFamily:'IRANSansMobile'
+        fontFamily:'B Nazanin'
     },
     box:{
         backgroundColor:'#fff',
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     },
     view_img:{
         width:'100%',
-        height:'65%',
+        height:'60%',
         alignItems:'center',
         justifyContent:'center'
     },
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     },
     view_name:{
         height:'20%',
-        padding:5,
+        padding:5
     },
     text_name:{
         fontSize:12,

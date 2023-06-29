@@ -1,0 +1,37 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/B Nazanin.ttf",
+      "sha1": "522b4441de5e24e6c94cf2b8603e0c1fd128d8e6"
+    },
+    {
+      "path": "src/assets/fonts/IRANSansMobile(FaNum)_Medium.ttf",
+      "sha1": "5dc859d9baa997f743030d5c5bdcf58545ae0db8"
+    },
+    {
+      "path": "src/assets/fonts/IRANSansMobile.ttf",
+      "sha1": "7399b704b8d3a2fa17e728b1daa8a12cc87a9aa3"
+    },
+    {
+      "path": "src/assets/fonts/IRANSansMobile_Bold.ttf",
+      "sha1": "d7bc778c136f0b999310ca721aeb1b50c3fe35d9"
+    },
+    {
+      "path": "src/assets/fonts/IRANSansMobile_Light.ttf",
+      "sha1": "879f454a5f3e3dd0b3e0f68ce5930326b310b583"
+    },
+    {
+      "path": "src/assets/fonts/IRANSansMobile_Medium.ttf",
+      "sha1": "affaf5a9049fd499f3a67998239dfe81d9f21e96"
+    },
+    {
+      "path": "src/assets/fonts/IRANSansMobile_UltraLight.ttf",
+      "sha1": "b1df611574bc0cbec55b79f6875861a312e5da24"
+    },
+    {
+      "path": "src/assets/fonts/Yasmin.ttf",
+      "sha1": "20da870c53c28503538bc1d69b6b4d75b2d184e9"
+    }
+  ]
+}

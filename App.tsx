@@ -2,7 +2,7 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { I18nManager } from 'react-native';
-I18nManager.forceRTL(true)
+I18nManager.forceRTL(false)
 import Main from './src/screens/main';
 import AboutCategory from './src/screens/about_category';
 import Off from './src/screens/off';

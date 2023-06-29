@@ -43,6 +43,7 @@ const styles= StyleSheet.create({
     text:{
         color:'#fff',
         fontSize:14,
+        fontFamily:'IRANSansMobile_Light'
     }
 })
 

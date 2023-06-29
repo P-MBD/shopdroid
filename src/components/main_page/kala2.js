@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 const w = Dimensions.get('window').width;
 
 const KalaTwo = () => {
-    const {navigate} = useNavigation();
+    const { navigate } = useNavigation();
     return(
         <View>
             <View style={styles.head}>
@@ -23,7 +23,7 @@ const KalaTwo = () => {
                 showsHorizontalScrollIndicator={false}
                 data={kala}
                 renderItem={({item,index})=>
-                    <Ripple style={styles.box} onPress={()=>navigate('Kala')}>
+                    <Ripple style={styles.box} onPress={()=>navigate('Kala',{header_name:item.pname})}>
                         <View style={styles.view_img}>
                             <Image 
                                 style={styles.img}
@@ -109,7 +109,8 @@ const styles = StyleSheet.create({
     text_price:{
         color:'#14dc17',
         fontSize:13,
-        textAlign:'left'
+        textAlign:'left',
+        fontFamily:'B Nazanin',
     }
 })
 

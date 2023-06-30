@@ -150,7 +150,7 @@ const My_Header = (props) => {
                     <Text style={styles.texth3}>
                         {props.head_page_name}
                     </Text>
-                    <Ripple style={styles.btn} >
+                    <Ripple style={styles.btn} onPress={()=>goBack(null)}>
                         <MIcon name='close' style={styles.icon}/>
                     </Ripple>
                 </Right>

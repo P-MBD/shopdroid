@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
 import {Text, View, StyleSheet,ScrollView,Dimensions,TouchableOpacity } from 'react-native';
 import MIcon from 'react-native-vector-icons/MaterialIcons';
+import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import People_commment from '../components/comment_page/people_commment';
+import Ripple from 'react-native-material-ripple'
 import My_Header from "../components/header/my_header";
 import Rating from '../components/kala_page/rating';
 
@@ -13,6 +15,7 @@ let props={
 const Comment_page= ()=>{
     const [filter_name,setFilter_name]=useState('جدید ترین نظرات')
     return(
+<View>
     <ScrollView style={styles.container}>
         <My_Header {...props} />
 
@@ -38,6 +41,11 @@ const Comment_page= ()=>{
         </View>
 
     </ScrollView>
+
+    <Ripple style={styles.btn} onPress={()=>navigate('Add_Comment')}>
+                <MCIcon name='pencil' style={styles.btn_icon}/>
+            </Ripple>
+</View>
     )
 }
 
@@ -85,7 +93,18 @@ sort_border:{
     paddingRight:8,
     borderRadius:5,
     borderColor:'#fff'
-}
+},
+btn:{
+    position:'absolute',
+    width:50,
+    height:50,
+    borderRadius:50,
+    backgroundColor:'#ef394e',
+    alignItems:'center',
+    justifyContent:'center',
+    bottom:0,
+    margin:15
+},
 
 })
 

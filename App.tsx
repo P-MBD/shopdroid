@@ -14,6 +14,7 @@ import Forget_Pass from './src/screens/forget_pass';
 import Search from './src/screens/search';
 import Category from './src/screens/category';
 import Comment_page from './src/screens/comment';
+import Add_Comment from './src/screens/add_comment';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +22,7 @@ const MyStack = () => {
   return (
     <NavigationContainer>
        <Stack.Navigator
-      initialRouteName="Comment_page"
+      initialRouteName="Add_Comment"
       screenOptions={{
         headerShown: false
       }}
@@ -79,6 +80,11 @@ const MyStack = () => {
          <Stack.Screen
           name="Comment_page"
           component={Comment_page}     
+        />
+
+        <Stack.Screen
+          name="Add_Comment"
+          component={Add_Comment}     
         />
 
       </Stack.Navigator>

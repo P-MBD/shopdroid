@@ -13,7 +13,7 @@ import SignOn from './src/screens/signOn';
 import Forget_Pass from './src/screens/forget_pass';
 import Search from './src/screens/search';
 import Category from './src/screens/category';
-import Comment_page from './src/screens/comment';
+import Comment from './src/screens/comment'
 import Add_Comment from './src/screens/add_comment';
 
 const Stack = createNativeStackNavigator();
@@ -22,7 +22,7 @@ const MyStack = () => {
   return (
     <NavigationContainer>
        <Stack.Navigator
-      initialRouteName="Add_Comment"
+      initialRouteName="Comment"
       screenOptions={{
         headerShown: false
       }}
@@ -78,8 +78,8 @@ const MyStack = () => {
         />
 
          <Stack.Screen
-          name="Comment_page"
-          component={Comment_page}     
+          name="Comment"
+          component={Comment}     
         />
 
         <Stack.Screen

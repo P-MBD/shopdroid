@@ -4,6 +4,7 @@ import MIcon from 'react-native-vector-icons/MaterialIcons';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import People_commment from '../components/comment_page/people_commment';
 import Ripple from 'react-native-material-ripple'
+import { useNavigation } from '@react-navigation/native';
 import My_Header from "../components/header/my_header";
 import Rating from '../components/kala_page/rating';
 
@@ -12,7 +13,8 @@ let props={
     head_page_name:'نظرات'
 }
 
-const Comment_page= ()=>{
+const Comment= ()=>{
+    const {navigate} = useNavigation();
     const [filter_name,setFilter_name]=useState('جدید ترین نظرات')
     return(
 <View>
@@ -43,8 +45,9 @@ const Comment_page= ()=>{
     </ScrollView>
 
     <Ripple style={styles.btn} onPress={()=>navigate('Add_Comment')}>
-                <MCIcon name='pencil' style={styles.btn_icon}/>
-            </Ripple>
+        <MCIcon name='pencil' style={styles.btn_icon}/>
+    </Ripple>
+    
 </View>
     )
 }
@@ -108,4 +111,4 @@ btn:{
 
 })
 
-export default React.memo(Comment_page)
+export default React.memo(Comment)

@@ -32,7 +32,7 @@ const Amazing_Auggestion = () => {
                 showsHorizontalScrollIndicator={false}
                 data={kala}
                 renderItem={({item,index})=>
-                    <Ripple style={styles.box} onPress={()=>navigate('Kala')}>
+                    <Ripple style={styles.box} onPress={()=>navigate('Kala',{header_name:item.pname})}>
                         <View style={styles.view_img}>
                             <Image 
                                 style={styles.img}

@@ -22,7 +22,7 @@ const MyStack = () => {
   return (
     <NavigationContainer>
        <Stack.Navigator
-      initialRouteName="Comment"
+      initialRouteName="Main"
       screenOptions={{
         headerShown: false
       }}

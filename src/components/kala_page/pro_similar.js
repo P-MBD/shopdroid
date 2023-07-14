@@ -2,10 +2,11 @@ import React, { memo } from 'react'
 import {View,Text,StyleSheet,FlatList, Image, Dimensions} from 'react-native'
 import { kala } from '../../data/dataArray'
 import Ripple from 'react-native-material-ripple'
+import { useNavigation } from '@react-navigation/native';
 
 const w = Dimensions.get('window').width;
 const Pro_similar = () => {
-    
+    const { navigate } = useNavigation();
     return(
         <View style={styles.container}>
             <View style={styles.head}>
@@ -18,7 +19,7 @@ const Pro_similar = () => {
                 showsHorizontalScrollIndicator={false}
                 data={kala}
                 renderItem={({item,index})=>
-                    <Ripple style={styles.box}>
+                    <Ripple style={styles.box} onPress={()=>navigate('Kala',{header_name:item.pname})}>
                         <View style={styles.view_img}>
                             <Image  
                             style={styles.img}

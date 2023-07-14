@@ -11,13 +11,15 @@ import Pro_similar from '../components/kala_page/pro_similar'
 import Pro_other_by from '../components/kala_page/pro_other_by'
 import My_Header from '../components/header/my_header'
 
-let props={
-    head_name:'Main',
-    head_page_name:'گوشی موبایل',
-    right_btn:'back',
-}
 
-const Kala = () =>{
+const Kala = ({route}) =>{
+    const { head_page_name } = route?.params || {};
+    let props={
+        head_name:'Main',
+        head_page_name:head_page_name,
+        right_btn:'back',
+    }
+
     return(
         <ScrollView style={{backgroundColor:'#eee'}}>
             <My_Header {...props} /> 

@@ -5,10 +5,11 @@ import KalaOne from '../components/about_category_page/kala1'
 import KalaTwo from '../components/about_category_page/kala2'
 import KalaThree from '../components/about_category_page/kala3'
 
-const AboutCategory=()=>{
+const AboutCategory=({route})=>{
+    const {header_name} = route?.params || {};
     return(
         <ScrollView style={{backgroundColor:'#f3f3f3',}}>
-            <My_Header head_name={'Main'} head_page_name={'تبلت'} />
+            <My_Header head_name={'Main'} head_page_name={header_name} />
             <KalaOne />
             <KalaTwo />
            

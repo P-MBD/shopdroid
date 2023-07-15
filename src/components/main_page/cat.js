@@ -12,7 +12,7 @@ const Cat=()=>{
         >
             {
                 cat_list.map((item,key)=>(
-                    <TouchableOpacity style={styles.btn} onPress={() => navigate('Category')} >
+                    <TouchableOpacity style={styles.btn} onPress={() => navigate('Category',{num_tab:key})} >
                         <Text style={styles.text}>
                             {item.name}
                         </Text>

@@ -10,7 +10,7 @@ const Content = () => {
             <FlatList 
                 data={cat_item}
                 renderItem={({item,key})=>
-                    <TouchableOpacity style={styles.btn} onPress={()=>navigate('AboutCategory')}>
+                    <TouchableOpacity style={styles.btn} onPress={()=>navigate('AboutCategory',{header_name:item.name})}>
                         <Image 
                          style={styles.img}
                          source={{uri:item.img}} />

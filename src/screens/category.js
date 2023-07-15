@@ -3,11 +3,12 @@ import { Container, Header, Tab, Tabs, ScrollableTab } from 'native-base'
 import Content from '../components/category_page/content';
 import { cat_list } from '../data/dataArray';
 import My_Header from '../components/header/my_header'
-const Category=(prpos)=>{ 
+const Category=({route})=>{ 
+  const { num_tab } = route?.params || {};
     return (
       <Container>
         <My_Header head_name={'Cat'} /> 
-     <Tabs  renderTabBar={()=> <ScrollableTab  backgroundColor='#EF394E'/>}>
+     <Tabs  initialPage={num_tab}  renderTabBar={()=> <ScrollableTab  backgroundColor='#EF394E'/>}>
         {
            cat_list.map((item,key)=>(
             <Tab 
@@ -19,12 +20,9 @@ const Category=(prpos)=>{
             >
                 <Content />
             </Tab>
-        ))
-
-        }
+        ))}
         </Tabs>
       </Container>
         );
      }
-
 export default React.memo(Category)
